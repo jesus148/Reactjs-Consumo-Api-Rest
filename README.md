@@ -3,7 +3,7 @@
 
 
 
-Proyecto usando reactjs 
+Proyecto usando reactjs 2024
 
   > administrador de paquete npm 
   > vitejs framework de reactjs 
