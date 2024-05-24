@@ -1,0 +1,25 @@
+
+
+//ARCHVIO  partial 
+
+// Un parcial es un archivo Sass nombrado con un guión bajo inicial . Podrías nombrarlo como _partial.scss. El guión bajo le permite a Sass saber que el archivo es solo un archivo parcial y que no debe generarse en un archivo CSS. Los parciales Sass se utilizan con la regla @use.
+
+
+// este archvios estaran las variable de css se usaran para modulos osea se usaran en otros archvios de css(sass)
+// osea esto servira como modulos
+
+
+
+// contendra colores 
+//recordar los valores hexadecimales ( 1 al f )del 0 al 16 
+// donde el primer valor se * 16 y el 2 se * 1 (los dos se suman)
+// 0 el menor valor y el 255 mayor valor 
+
+$color1 : #D91A4D;
+$color2 :  #1790BF;
+$color3 :  #B6D936;
+$color4 :   #F2CB05;
+$color5 :  #A65D03;
+$color6 : #2A2828 ;
+$color7 : #FFFFFF  ;
+$color8 : #8F9093  ;

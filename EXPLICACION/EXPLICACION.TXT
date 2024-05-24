@@ -1,0 +1,58 @@
+
+
+https://www.youtube.com/watch?v=jg5ydNHNVJ4&t=8331s
+
+
+
+USAMOS EN ESTE PROYECTO VITEJS
+  > NPM (administrador de paquetes)
+  > tambien usamos sass
+
+
+
+----------------------------------------
+   --- CONFIGURANDO SASS EN EL PROYECTO
+
+  1 PASO IMPORTANTE (LUEGO DE CREAR COMPONENTES BUTTON Y APP)
+    configuramos el proyecto para usar sass
+    leee la documentacion (https://es.vitejs.dev/guide/features.html) > Preprocesadores CSS(parte abajo)
+       
+       # .scss and .sass (esto usaremos)
+       npm add -D sass
+
+        # .less
+        npm add -D less
+
+         # .styl and .stylus
+         npm add -D stylus
+
+  2 PASO 
+     terminal el proceso si el servidor esta corriendo en la terminal
+
+  3 PASO 
+     en la terminal   >  npm add -D sass (poner eso)
+     instalara sass en tu proyecto
+
+
+
+----------------------------------------
+---- tambien usamos react ICONS
+
+  https://react-icons.github.io/react-icons/ (ver + info)
+
+  Installation (for standard modern project)
+
+   >  npm install react-icons --save (cierra el servidor si esta corriendo y ejecuta eso pa instalar)
+
+   > pasos para usar el react icons 
+      en la parte izquierda de la pagina encontraras tipos de icons , selecciona a tu eleccion 
+        > luego de elegir saldra en el import solo realacionado a ese tipo de iconos osea el import sera 
+        para todos esos iconos q estan ahi.
+        -- eso ponlo en tu proyecto , en el IconName ira el icono que tu elegis de ese tipo de iconos
+           ti : es el tipo de iconos osea dentro de ahi hay + iconos
+           import { IconName } from "react-icons/ti"; ejemplo 
+        > ahora busca de ese tipo de icons el icono q tu quieres selecciona ese icono y saldra 1 ventana
+         donde podra copiar de diferentes maneras
+           ejemplo:
+          -- TiArrowLeftOutline : es el icono q elegi y nada mas lo llamas en los componentes 
+           import { TiArrowLeftOutline } from "react-icons/ti";

@@ -1,0 +1,295 @@
+
+
+
+ 1 .  ENTRA A GOOGLE 
+      BUSCA EN EL BUSCADOR POKEAPI
+
+
+2 .  EN LA PARTE DEL MENU NAV BAR (ARRIBA) SELECCCIONA API v2
+
+ 
+3.  EN LA PARTE IZQUIERDA EN EL INDICE SELECCCIONA POKEMON , LUEGO VULVE A SELECCCIONAR POKEMON
+    POKEMON > POKEMON
+
+
+(SALDRA ESTO)
+    Pokémon (group)
+Abilities (endpoint)
+Abilities provide passive effects for Pokémon in battle or in the overworld. Pokémon have multiple possible abilities but can have only one ability at a time. Check out Bulbapedia for greater detail.
+
+GET                                        TU MANDAS ESTO EL NUMERO O PUEDES PONER EL NOMBRE TAMBIEN 
+https://pokeapi.co/api/v2/pokemon/{id or name}/
+
+//DATOS DEL POKEMON
+
+id:35
+name:"clefairy"
+base_experience:113
+height:6
+is_default:true
+order:56
+weight:75
+is_hidden:true
+slot:3
+name:"friend-guard"
+url:"https://pokeapi.co/api/v2/ability/132/"
+
+
+
+//PUEDES PROBAR COMO SALDRA EL API USANDO EL GET 
+                                                                            10 cualquier numero
+     > en tu navegador  poner esto     (  https://pokeapi.co/api/v2/pokemon/10/ )
+
+     > debes tener la extension json
+
+     > te mostra los datos del pokemon en formato json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXPLICACION 2-------------------------------------
+
+
+API POKEMOSN VIENDO LAS EVOLUCIONES 
+NAVEGADOR --> (  https://pokeapi.co/api/v2/evolution-chain/1/ )
+
+
+  EN EL JSON BUSCA ESO > OSEA CADA POKEMON TIENE VARIAS EVOLUCIONES
+{
+"baby_trigger_item": null,
+"chain": {
+"evolution_details": [],
+"evolves_to": [
+{
+"evolution_details": [1 item],
+"evolves_to": [
+{
+"evolution_details": [1 item],
+"evolves_to": [],
+"is_baby": false,
+"species": {                 ---- los pokemones tienen hasta 3 evoluciones
+"name": "venusaur",       ----- 3 EVOLUVION ubicacion en el json   "chain" > "evolves_to": > "evolves_to" >"species">
+"url": "https://pokeapi.co/api/v2/pokemon-species/3/"
+}
+}
+],
+"is_baby": false,
+"species": {                --- 
+"name": "ivysaur",  ----- 2 EVOLUVION ubicacion en el json "chain" > "evolves_to" > "species":
+"url": "https://pokeapi.co/api/v2/pokemon-species/2/"
+}
+}
+],
+"is_baby": false,
+"species": {                --- ESTE ES EL NOMBRE DEL POKEMON 
+"name": "bulbasaur",    ----- 1 EVOLUVION > ubicacion dentro del json "chain" > "species"
+"url": "https://pokeapi.co/api/v2/pokemon-species/1/"
+}
+},
+"id": 1
+}
+
+
+
+
+-------------------------
+ojo : hay pokemones q no tienen mas evoluciione por ende debemos inpspeccionar en la api , esta api me da info de las evoluciones
+
+https://pokeapi.co/api/v2/evolution-chain/63/ (este pokemon no tiene + evoluciones)
+
+
+
+{
+"baby_trigger_item": null,
+"chain": {
+"evolution_details": [],
+"evolves_to": [],      ------ hay salen las evoluciones esta vacio por ende podemos usar eso para verificar si tienes mas evolucione
+"is_baby": false,
+"species": {      --- solo tiene 1 evolucion
+"name": "tauros",
+"url": "https://pokeapi.co/api/v2/pokemon-species/128/"
+}
+},
+"id": 63
+}
+
+
+
+
+
+
+-------------------------- para obtner las imagenes del api pokemon  , ESTe api me da toda la info de un pokemon(name , imagenes.etc)
+
+al api pokemon (https://pokeapi.co/docs/v2#pokemon)
+
+
+-- puedes buscar pokemones tanto por su nombre o por su id
+metodo API -GET : GET https://pokeapi.co/api/v2/pokemon/{id or name}/
+
+en la parte izquierda (aside) pokemon > pokemon 
+
+Pokemon (endpoint)
+Pokémon are the creatures that inhabit the world of the Pokémon games. They can be caught using Pokéballs and trained by battling with other Pokémon. Each Pokémon belongs to a specific species but may take on a variant which makes it differ from other Pokémon of the same species, such as base stats, available abilities and typings. See Bulbapedia for greater detail.
+
+
+en ese json busca > sprites (ahi estan la imagens de los pokemones)
+
+
+ojo : lo malo de este sprites dan las imagenes muy chicas y no nos sirve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXPLICACION 3-------------------------------------
+
+para obtner las imagenes del api pokemon  , ESTe api me da toda la info de un pokemon(name , imagenes.etc)
+pero lo que queremos son imagene grande q se puedan ver
+
+al api pokemon (https://pokeapi.co/docs/v2#pokemon)
+
+ubicacioon imagenes adecuadas pa q se vean bien los pokemones 
+en la parte izquierda (aside) pokemon > pokemon > sprites > other  > "official-artwork"> front_default  > ahi estan las imagenes 
+
+
+-- puedes buscar pokemones tanto por su nombre o por su id
+metodo API -GET : GET https://pokeapi.co/api/v2/pokemon/{id or name}/
+
+
+
+cuando consumas el json debes escribirlo igual en el codigo  observaciones al consumior el json ;
+
+  "official-artwork": lleva un guion si lo consumes en el codigo se pone 
+                          ['official-artwork']
+
+  front_default : en el codigo se pone igual front_default                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+  EXPLICACION 4 _____________________________________________________
+  en esto vamos a obtener el nombre de la 2 especie del pokemon . recordar q este pokemon de 2 especie tiene diferente img y info
+
+  https://pokeapi.co/api/v2/evolution-chain/10/  (poner cualquier id)
+
+  chain > evolves_to (voy hacer 1 condciaones para verificar q nop este vacio)
+si no esta vacio saco el segundo nombre del pokemon (  chain > evolves_to  >species >name) ese es el 2 nombre de la 2 especie del pokemon apartir de ahi sacaremos la imagen
+
+  
+"baby_trigger_item": null,
+"chain": {
+"evolution_details": [],
+"evolves_to": [
+{4 items}
+],
+"is_baby": true,
+"species": {
+"name": "pichu",
+"url": "https://pokeapi.co/api/v2/pokemon-species/172/"
+}
+},
+"id": 10
+}
+
+ademas : obteniedno la data desde el codigo es asi 
+-- ponemos [0] pq dirigite al chain > evolves_to(esto tiene 1 solo item) por lo tanto solo debes sacar no hay mas xeso se pone 0
+osea cada vez q veas q solo haiga 1 elemento o 1 item dentro de dato en el json debes poner [0]
+data.chain.evolves_to[0].species.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXPLICACION 5 ===================================================
+
+oteniendo el nombre de la 3 especie del pokemon (el nombre y la imagen)
+
+
+  https://pokeapi.co/api/v2/evolution-chain/10/  (poner cualquier id)
+
+dirigite en el json chain > evolves_to > evolves_to > species > name  (nombre de la 3 especie)
+
+apartir de ahi obtenemos la img
+
+
+
+"baby_trigger_item": null,
+"chain": {
+"evolution_details": [],
+"evolves_to": [
+{
+"evolution_details": [1 item],
+"evolves_to": [
+{
+"evolution_details": [1 item],
+"evolves_to": [],
+"is_baby": false,
+"species": {
+"name": "venusaur",
+"url": "https://pokeapi.co/api/v2/pokemon-species/3/"
+}
+}
+],
+"is_baby": false,
+"species": {
+"name": "ivysaur",
+"url": "https://pokeapi.co/api/v2/pokemon-species/2/"
+}
+}
+],
+"is_baby": false,
+"species": {
+"name": "bulbasaur",
+"url": "https://pokeapi.co/api/v2/pokemon-species/1/"
+}
+},
+"id": 1

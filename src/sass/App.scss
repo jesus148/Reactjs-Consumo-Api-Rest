@@ -1,0 +1,106 @@
+
+
+// ARCHIVO SASS PARA EL COMPONENTE APP
+
+.buttons-container{
+
+  width: 300px;
+  
+  display: flex;
+  justify-content: space-between
+  ;
+}
+
+
+
+.card-container{
+  // border:4px solid;
+  display: flex;
+  width: 700px;
+  height: 500px;
+  margin-top: 80px;  
+  margin-left: 200px;
+  position: relative;
+
+  align-items: center;
+
+
+
+
+}
+
+// ESTILOS PERSONALIZADOS PARA CADA HIJO USANDO EL NTH-CHILD
+
+// .card:nth-child(1) :
+// SASS es uno de los lenguajes de extensión CSS más populares que proporciona superpotencia al CSS normal. La clase nth-child() es una pseudoclase, cuando algún elemento HTML tiene más de dos elementos del mismo tipo, podemos usar la pseudoclase de la clase nth-child para proporcionar estilo a esos elementos sin definir una clase separada.
+// osea es eligiendo el hijo del padre tomando una posicion osea el primero  Recorda q tenemos 3 hijos osea card (3 especies de un pokemon), .card es nombre de tu componente
+.card-container .card:nth-child(1){
+  position: absolute; //recorda cuando usamos absoltue tenemos q usar relative en el padre 
+  left: 0;
+  z-index: 3;
+  transition: 300ms; //300ms es = 0.3 segundos 
+  transform: rotate(-5deg) translatey(10px);
+  //usamos el ampersan & es como el this 
+  &:hover{
+    transform: rotate(-5deg) translatey(0px);
+    
+  }
+}
+
+
+.card-container .card:nth-child(2){
+  position: absolute; //recorda cuando usamos absoltue tenemos q usar relative en el padre 
+  left: 180px;
+  z-index: 2;  
+
+  transition: 300ms;
+  &:hover{
+    transform: translateY(-10px);
+  }
+}
+
+
+.card-container .card:nth-child(3){
+  position: absolute; //recorda cuando usamos absoltue tenemos q usar relative en el padre 
+  left: 330px;
+  z-index: 1;
+  transition: 300ms;
+  transform: rotate(5deg) translatey(10px);
+  &:hover{
+    transform: rotate(5deg) translatey(0px);
+    
+  }
+}
+
+
+
+
+
+
+.app{
+  display: flex;
+//   En resumen:
+//   Con esta configuración, si tienes varios elementos hijos dentro del .container, se dispondrán en una columna vertical, uno debajo del otro. Las propiedades como justify-content se aplicarán a lo largo del eje y (vertical), y align-items se aplicarán a lo largo del eje x (horizontal).
+// Eje principal (main axis): Y (vertical).
+// Eje transversal (cross axis): X (horizontal).
+  flex-direction: column;  //recordar que el eje x pasa al vertical y el eje y pasa al horizontal
+align-items: center;
+gap: 24px;
+}
+
+
+
+
+
+.card1{
+
+  transform: rotate(5deg) translate(0px);
+  
+}
+
+
+.card2{
+  transform: rotate(5deg) translate(100px);
+}
+
+

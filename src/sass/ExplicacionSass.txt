@@ -1,0 +1,33 @@
+
+
+
+
+   --- CONFIGURANDO SASS EN EL PROYECTO CON VITE
+
+  1 PASO IMPORTANTE (LUEGO DE CREAR COMPONENTES BUTTON Y APP)
+    configuramos el proyecto para usar sass
+    leee la documentacion (https://es.vitejs.dev/guide/features.html) > Preprocesadores CSS(parte abajo)
+       
+       # .scss and .sass (esto usaremos)
+       npm add -D sass
+
+        # .less
+        npm add -D less
+
+         # .styl and .stylus
+         npm add -D stylus
+
+  2 PASO 
+     terminal el proceso si el servidor esta corriendo en la terminal
+
+  3 PASO 
+     en la terminal   >  npm add -D sass (poner eso)
+     instalara sass en tu proyecto
+
+
+
+
+
+OJO :
+ademas recomnedable usar un carpeta para tus sass archivos 
+cada componnete tendra su sass

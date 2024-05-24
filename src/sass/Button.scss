@@ -1,0 +1,63 @@
+
+
+
+//importando el modulo de sass se usa el @use (contiene las variables de color)
+//el modulo se llama _variables.scss , aca se importa sin el _
+@use 'variables' ;
+// // usando un alias tambien se puede
+// se puede usar el import pero no es recomendable
+// @use 'variables' as var;
+
+
+
+// ARCHIVO SASS PARA EL COMPONENTE BUTTON 
+
+.button{
+
+    //usando una variable del modulo , debe ser = variable y modulo
+    background-color: variables.$color3;
+    // background-color: greenyellow;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: black    ;
+    font-size: 32px;
+
+
+    // PADRE 
+    //usando selector de sass osea algo asi como herencia , se usa para el componenente q lo lleve osea el padre
+    // & : esto significa el mismo nombre osea .button . adenas es un selector El selector principal, &es un selector especial inventado por Sass que se usa en selectores anidados para referirse al selector externo. Hace posible reutilizar el selector externo de formas más complejas, como agregar una pseudoclase o agregar un selector antes del  padre.
+    // __box le agrega a los elmentos q su nombre sea igual osea .button__box en este caso es el padre
+    //&__ esta llamando igual a este componente que es .button osea lo repite por ende lo pone en __
+    &__box{
+
+        position: relative;
+    }
+
+
+    //2 HIJO 
+
+    &__shadow{
+        width:60px ;
+        height: 60px;
+        background-color: variables.$color2;
+        border-radius: 50%;
+        // cuando usemos el absolute siempre poner un relative al padre reglas de css
+        position: absolute;
+        top: 5px;
+        z-index: -1;
+    }
+
+
+    // active : El :activeselector se utiliza para seleccionar y diseñar el enlace activo.
+    // Un enlace se activa cuando haces clic en él.
+
+    &:active{
+ transform: translateY(4px);
+    }
+
+
+}
+

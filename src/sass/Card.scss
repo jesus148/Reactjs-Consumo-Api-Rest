@@ -1,0 +1,52 @@
+
+
+@use 'variables' as v ;
+
+
+
+
+
+// recordando en css : cuando usas el z-index debes tambien usar junto con el position absolute 
+
+
+//USanso el nested en sass osea reglas anidadas 
+.card{
+    width: 200px;
+    height: 320px;
+    background-color: v.$color3 ;
+    border-radius: 42px 10px 42px 10px;
+    box-shadow: 3px 3px 10px;
+    padding: 48px 12px 12px;
+    cursor: pointer;
+    position: relative; //usando el relative
+    overflow: hidden; //oculta lo q desborde 
+
+    &__name{
+        background-color: v.$color6;
+        text-align: center;
+        color: white;
+        width: 140px;
+        position: absolute;//cuando usemos el absolute , el padre debe tener el relative
+        right: 0;
+        bottom: 0;
+        padding: 6px 12px;
+    }
+    &__circle{
+        background-color: v.$color6;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: absolute;
+        top: 56px;
+        left: 24px;
+
+    }
+    &__img{
+
+        position: absolute;
+        z-index: 1;//esto saldra primero pq los demas tines valor por defecto 0 en z index
+        width: 100%;
+    
+
+    }
+}
