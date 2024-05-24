@@ -255,7 +255,7 @@ const add = ()=>{
 
 
 
-  // REDNERIZADO DEL COMPONENTE 
+  // REDNERIZADO DEL COMPONENTE s
   return (
     <div className='app'>
 
